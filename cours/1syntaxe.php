@@ -75,3 +75,75 @@ define('LASTNAME', 'Nom de famille');
 echo LASTNAME;
 
 ?>
+
+<!-- Les nombres (https://www.php.net/manual/en/ref.math.php) -->
+
+<?php
+
+    //Déclarer des nombres
+    $a = 5; //Integer
+    $b = 4.5; //Float
+    $c = $a + $b;
+
+    //Operations arithmetiques
+    /*
+    +
+    -
+    *
+    /
+    %
+    */
+
+    echo '<br>' . ($a + $b * $b / 4.5) . '</br>'; //Priorité des opérations respectée
+    echo ($a % 2); // Retourne le reste de la division (utile pour savoir si un nombre est multiple d'un autre)
+
+    //Opérateurs d'assignations
+    /*
+    =
+    +=
+    -=
+    *=
+    /=
+    %=
+    */
+    $a += $b; // (equivalent à $a = $a + $b;)
+    echo '<br>' . $a;
+
+    // Opérateurs d'incrémentation et décrementation
+    /*
+    ++
+    --
+    */
+    echo '<br>' . $a++; // Fait le echo puis on incremente
+    echo '<br>' . ++$a; // Fait l'incrementation et fait le echo
+
+    //Fonctions de verification concernant les nombres
+    is_double($a);
+    is_float(1.25);
+    is_int(1); is_integer(1); // Ce sont les même fonctions
+    is_numeric("4.5"); // Verifie si un string peut être convertie en nombre; retourne true;
+
+    // Conversion (caster)
+    $strInteger = "33";
+    $Integer = (int)$strInteger; // Caster
+    $Integer = intval($strInteger); // Via une fonction
+    echo '<br> Ceci est une conversion : ' . gettype($Integer) . '<br>';
+
+    // Fonctions utilisables sur les nombres (arrondir, puissance, absolue, troncature ...)
+    echo "abs(-15) " . abs(-15) . '<br>';
+    echo "pow(2,  3) " . pow(2, 3) . '<br>'; //pow(base, exposant)
+    echo "sqrt(16) " . sqrt(16) . '<br>'; // Racine carrée
+    echo "max(2, 7, 4, 3) " . max(2, 7, 4, 3) . '<br>';
+    echo "min(2, 3) " . min(2, 3) . '<br>';
+    echo "round(2.4) " . round(2.4) . '<br>'; //arrondie
+    echo "round(2.6) " . round(2.6) . '<br>'; //arrondie
+    echo "floor(2.6) " . floor(2.6) . '<br>'; // Arrondie toujours à l'inférieur
+    echo "ceil(2.4) " . ceil(2.4) . '<br>'; // Arrondie toujours au supérieur
+
+    // Formatter un nombre
+    $number = 123456789.12345;
+    echo number_format($number, 2, ',', ' ') . '<br>'; //number_format(variable, nombreDeChiffreApresVirgule, 'separateurDecimal', 'separateurDesMilliers')
+
+?>
+<br> <br>
+
