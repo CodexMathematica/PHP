@@ -463,9 +463,39 @@ foreach ($person as $key => $value) {
 
 ?>
 
+<!-- Les fonctions -->
+
+<?php
+// Déclarer une fonction
+function hello() {
+    echo 'Hello Tim. <br>';
+}
+
+// Appeler une fonction
+hello();
+
+//Déclarer et appeler une fonction avec des arguments + typage
+function hi(string $user): void {
+    echo "Hi $user. <br>";
+}
+
+hi('Barbara');
+
+function welcome($mrs, $mr){
+    echo "Welcome Mrs $mrs and Mr $mr. <br>";
+}
+
+welcome('Kyle', 'Wayne');
+
+function sum(int $a, int $b): int
+{
+    return $a + $b;
+}
+
+echo '<br> Je fais une addition : ' . sum(3, 2);
 
 
-
+?>
 
 
 
