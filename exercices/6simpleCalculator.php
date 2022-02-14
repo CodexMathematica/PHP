@@ -19,6 +19,9 @@
                 case 'division' :
                     if($y != 0) $result = $x / $y;
                     break;
+                case 'puissance' :
+                    $result = pow($x, $y);
+                    break;
                 default :
                     $result ='0';
             }
@@ -58,6 +61,7 @@
         <input type="submit" value="soustraction" name="op">
         <input type="submit" value="multiplication" name="op">
         <input type="submit" value="division" name="op">
+        <input type="submit" value="puissance" name="op">
     </div>
 
     </form>
