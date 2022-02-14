@@ -494,10 +494,72 @@ function sum(int $a, int $b): int
 
 echo '<br> Je fais une addition : ' . sum(3, 2);
 
-
 ?>
 
+<!-- Les dates -->
+
+<?php 
+
+// Afficher la date du jour
+echo date('Y-m-d H:i:s') . '<br>';
+
+// Afficher la date d'hier
+echo date('Y-m-d H:i:s', time() - 60 * 60 * 24) . '<br>';
+
+// Jouer avec les formats: https://www.php.net/manual/en/function.date.php
+echo date('F j Y, H:i:s') . '<br>';
+
+//Afficher le timestamp (Standard qui désigne le nombre de secondes écoulées depuis le 1er janvier 1970. Avantages et inconveniants : http://www.timestamp.fr/)
+echo time() . '<br>';
+
+// Parser (modifier) une date : https://www.php.net/manual/en/function.date-parse.php
+$dateString = '2022-02-14 10:40:00';
+$parsedDate = date_parse($dateString);
+echo '<pre>';
+var_dump($parsedDate);
+echo '</pre>';
+?>
+
+<!-- Compléments -->
+<br> <br> <br>
+<?php
+//1 Affectation par valeur et par référence
+//Affectation par valeur (On duplique le contenu d'une variable dans un autre espace mémoire que l'on nomme)
+$leNombre1 = 20;
+$leNombre2 = $leNombre1;
+var_dump($leNombre1);
+var_dump($leNombre2);
+$leNombre1 = 3;
+var_dump($leNombre1);
+var_dump($leNombre2);
+//Affectation par référence (On donne un alias à une variable. La seconde variable pointe vers le même espace mémoire.)
+$leNombre3 = 20;
+$leNombre4 = &$leNombre3; // & en plus
+var_dump($leNombre3);
+var_dump($leNombre4);
+$leNombre3 = 3;
+var_dump($leNombre3);
+var_dump($leNombre4);
+
+//2 Portée des variables (locale vs globale)
+
+function laPorteeDesVariables(){
+    $portee = "local"; // Cette variable n'existe que dans la fonction
+}
+
+$portee = 'global'; // Variable globale différente de la variable déclarée dans la fonction precedente.
+
+// Comment faire en sorte que les deux variables soit identiques ?
+//Retourner la valeur dans la fonction
+
+// function laPorteeDesVariables(){
+//     $portee = "local"; // Cette variable n'existe que dans la fonction
+//     return $portee;
+// }
+
+// $portee = laPorteeDesVariables(); On affecte la valeur du return dans la variable globale. 
 
 
 
 
+?>
