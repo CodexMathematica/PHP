@@ -118,13 +118,57 @@ class Alien{
 $member2 = new Alien("Terrienne", "terrien");
 $member2->presentation();
 
+?>
+
+<!-- L'heritage -->
+
+<!-- But : Créer un membre avec un petit quelque chose en plus -->
+
+<?php
+
+class SgcAlienMember extends SgcMember {
+    public $race;
+
+    public function __construct($last_name, $first_name, $rank, $race) {
+        parent::__construct($last_name, $first_name, $rank);
+        $this->race = $race;
+    }
+
+    public function identity(){
+        var_dump("Je suis un $this->race !");
+    }
+}
+
+$member3 = new SgcAlienMember("", "Teal'c", "membre externe", "Jaffa");
+
+//Notes : On peut surcharger en réécrivant une méthode du parent/
+// La propriété de la classe parente ne doit pas être en private mais en protected pour être accessible
+// On peut extend qu'une seule classe.
 
 ?>
 
+<!-- Interface et classe abstraite -->
 
+<?php
+// Une classe abstraite : c'est une classe non instanciable dans laquelle on ne définit pas les fonctions (on nomme des fonctions en laissant les accolades vides).
+//Les enfants qui 'extends' doivent définir obligatoirement les fonctions 'abstract'.
+abstract class Credential {
+    protected $accreditation;
 
+    public function __construct($accreditation){
+        $this->accreditation = $accreditation;
+    }
 
+    abstract public function authorisation();
+}
 
+?>
 
-
-
+<?php
+// ON peut implémenter plusieurs interfaces en utilisant le mot clef 'implements'
+// L'interface liste des méthodes vide qu'il faudra obligatoirement définir dans la classe qui l'implémente
+interface Weapon {
+    public function shoot();
+}
+// class SgcMember implements Weapon ...
+?>
