@@ -11,3 +11,19 @@
 
 
 <!-- Réponses -->
+
+<?php 
+
+    class UserMsg {
+        public $message = 'Bonjour';
+
+        public function greetings($title){
+            return $this->message . $title;
+        }
+
+    }
+
+    $myMessage = new UserMsg();
+    echo $myMessage->greetings('Professeur');
+    echo $myMessage->message;
+?>
