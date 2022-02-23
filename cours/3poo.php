@@ -210,3 +210,10 @@ $phone->laser();
 $phone->shoot();
 
 ?>
+
+<!-- Namespace: Séparer le code dans plusieurs fichiers (depuis 5.3) -->
+<!-- Avantage dans les gros projet ou l'on rique d'avoir des classes du même nom. Avec namespace on utilise un alias-->
+
+<!-- Exemple de définition d'un namespace: namespace App\Client\Compte;   Régle : définir le namespace en début de fichier -->
+<!-- Exemple de référence à un namespace: use App\Client\Compte as CompteClient;    Indique que l'on fait référence au fichier dans ce namepsace -->
+<!-- Voir le dossier 3-1 sur les namspaces pour la démonstration -->
