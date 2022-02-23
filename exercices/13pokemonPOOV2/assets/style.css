@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin: 3px;
+}
+
+body{
+    color: whitesmoke;
+    font-size: 1.2em;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+h1{
+    color: gold;
+}
+
+h2{
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.btn{
+    background-color: black;
+    border-radius: 10px;
+    border: 4px double lightslategray;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+.btn:hover{
+    background-color: red;
+    border-radius: 10px;
+    border: 4px double black;
+    color: whitesmoke;
+}
+
+input[type=text],input[type=number] {
+    border: 2px solid red;
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 110px;
+}
+
+select{
+    border: 2px solid blue;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 0.7em;
+}
+
+.hero{
+    margin: 0.5em;
+    color: antiquewhite;
+}
+
+.ennemy{
+    margin: 0.5em;
+    color: azure;
+}
+
+.result{
+    margin: 0.7em;
+    color: aquamarine;
+}
+
+.footer{
+    font-size: 0.5em;
+}
