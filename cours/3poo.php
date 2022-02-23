@@ -172,3 +172,41 @@ interface Weapon {
 }
 // class SgcMember implements Weapon ...
 ?>
+
+<!-- Les traits (depuis php 5.4) -->
+<!-- 'Classe' que l'on ne peut pas instancier (le but est de regrouper des méthodes) -->
+<!-- Répond au probléme que l'on ne peut pas hériter de plusieur classes (Les methodes ne sont pas vides contrairement aux interfaces) -->
+<?php
+
+class Mobile{ // A ecrire dans un autre fichier et inclure ensuite avant la classe smartphone
+    function power(){
+        echo "Unlimited power !!! <br>";
+    }
+}
+
+trait Lightsaber{ // A ecrire dans un autre fichier et inclure ensuite avant la classe smartphone
+    function laser(){
+        echo "A lightsaber in my pocket. <br>";
+    }
+}
+
+trait Pistolaser{ // A ecrire dans un autre fichier et inclure ensuite avant la classe smartphone
+    function laser(){ // Que se passe t-il si le trait à une fonction du même nom qu'un fonction contenu dans un autre trait ?
+        echo "Pew pew !!! <br>";
+    }
+}
+
+class Smartphone extends Mobile {
+    use Lightsaber, Pistolaser {
+        Lightsaber::laser insteadOf Pistolaser; //Indique que la methode de Lightsaber prime sur la methode homonyme.
+        Pistolaser::laser as shoot; // Change le nom de la methode pour l'utiliser sans confusion
+    }
+    //Peut avoir plein de traits (et on peut même ajouter des traits dans des traits)
+}
+
+$phone = new Smartphone;
+$phone->power();
+$phone->laser();
+$phone->shoot();
+
+?>
