@@ -78,8 +78,8 @@ $member1->presentation();
 <!-- Encapsulation -->
 
 <!-- But : Sécuriser le contenu des variables (en controler l'accès) -->
-<!-- Modificateur de propriétés : public, private, protected
-    Modificateur de méthodes : public, static (accessible sans instancier la classe)
+<!-- Modificateur de propriétés et méthodes : public, private, protected
+    Modificateur suplémentaire : static (accessible sans instancier la classe, on y accéde avec ::)
     Accesseur : getter et setter
 -->
 

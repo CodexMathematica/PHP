@@ -30,3 +30,5 @@ print_r($reponse);
 echo '</pre>';
 
 ?>
+
+<!-- On peut egalement envoyer des données (POST) avec cURL -->
