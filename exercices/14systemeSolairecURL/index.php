@@ -30,12 +30,17 @@
                 </div>
                 <div class="col-2">
                     <div class="mt-4"></div>
-                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-4">Soumettre</button>
                 </div>
             </form>
         </section>
         <section class="container">
-            <?php if(isset($answer) && !empty($answer)){ ?>
+            <?php 
+            if(isset($error) && !empty($error)){
+                echo $error;
+            }
+            if(isset($answer) && !empty($answer)){ 
+            ?>
                 <div class="container">
                 <!-- both -->
                     <?php if(isset($_GET['search']) && !empty($_GET['search']) && isset($_GET['searchType']) && !empty($_GET['searchType']) || isset($_GET['link']) && !empty($_GET['link'])){ ?>
