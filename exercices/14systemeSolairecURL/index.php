@@ -19,6 +19,7 @@
                     <option value=''>Tout</option>
                     <option value='Star'>Etoile</option>
                     <option value='Planet'>Planete</option>
+                    <option value='Dwarf%20Planet'>Planete naines</option>
                     <option value='Asteroid'>Asteroid</option>
                     <option value='Comet'>Comete</option>
                     <option value='Moon'>Lune</option>

@@ -62,7 +62,7 @@ if(isset($_GET['searchType']) && isset($_GET['search'])){
             $datas = $elt;
         }
     }else{
-        echo 'error';
+        echo 'erreur';
     }
 }elseif(isset($_GET['link'])){
     $answer = curlRequest($_GET['link']);
