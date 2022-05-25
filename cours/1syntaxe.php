@@ -35,7 +35,6 @@ $age = 21;
 $isAlive = true;
 $height = 1.95;
 $power = null;
-(bool) $typage = true; //Pour donner un type à une variable. (Disponible depuis la version 7.1)
 
 /* Les Types
 String
